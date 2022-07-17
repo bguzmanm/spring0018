@@ -22,6 +22,15 @@ public class CustomerController {
         model.addAttribute("customers", service.read());
         return "listClientes";
     }
+
+    @GetMapping("/{id}")
+    public String showOne(@PathVariable("id") int id, Model model){
+
+        model.addAttribute("customer", service.read(id));
+        return "customer";
+    }
+
+
     // /customer/edit/3
     @PostMapping("/edit/{id}")
     public String updateCliente(@PathVariable("id") int id, @RequestBody Customer c, Model model){

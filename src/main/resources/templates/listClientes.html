@@ -22,6 +22,7 @@
                     <th>Apellido</th>
                     <th>Email</th>
                     <th>Activo</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,8 @@
                     <td th:text="${customer.getLast_name()}">Last_name</td>
                     <td th:text="${customer.getEmail()}">Email</td>
                     <td th:text="${customer.isActive()}">Active</td>
+
+                    <td><a th:href="@{/customer/{id}(id=${customer.getCustomer_id()})}">edit</a></td>
                 </tr>
             </tbody>
         </table>
